@@ -58,7 +58,7 @@ export default function Home() {
         </div>
 
       {/* BUILD YOUR OWN */}
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-5xl font-bold mb-6">Hoogstraat 18 , Gistel (8470)</h2>
           <p className="text-2xl mb-12 text-gray-600">059/27.45.65</p>
@@ -69,7 +69,7 @@ export default function Home() {
             Reserveer nu
           </a>
         </div>
-      </section>
+      </section> */}
 
       {/* LOCATION SECTION */}
       <section className="py-20 bg-white">
@@ -82,13 +82,13 @@ export default function Home() {
               
               <div className="space-y-8">
                 <div>
-                  <p className="text-amber-600 font-medium text-lg">📍 Address</p>
+                  <p className="text-amber-600 font-medium text-lg">📍 Addres</p>
                   <p className="text-2xl font-semibold mt-2">Hoogstraat 18</p>
-                  <p className="text-2xl font-semibold">8470 Gistel, Belgium</p>
+                  <p className="text-2xl font-semibold">8470 Gistel</p>
                 </div>
 
                 <div>
-                  <p className="text-amber-600 font-medium text-lg">🕒 Opening Hours</p>
+                  <p className="text-amber-600 font-medium text-lg">🕒 Openingsuren</p>
                   <p className="text-xl mt-2">Maandag – Zaterdag: 07:30 – 14:30</p>
                   <p className="text-xl">Zondag Gesloten</p>
                 </div>
@@ -99,7 +99,7 @@ export default function Home() {
                     target="_blank"
                     className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-2xl hover:bg-gray-800 transition text-lg"
                   >
-                    Get Directions →
+                    Reserveer Nu →
                   </a>
                 </div>
               </div>
@@ -116,7 +116,7 @@ export default function Home() {
       {/* ABOUT */}
       <section className="py-20 bg-[#F9F5F0]">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-8">Openingstijden:</h2>
+          <h2 className="text-4xl font-bold mb-8">Openingsuren:</h2>
           <p className="text-xl leading-relaxed text-gray-700">
             
             <p>maandag	07:30–14:30</p>
