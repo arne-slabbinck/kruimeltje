@@ -26,7 +26,8 @@ export default function Home() {
             playsInline
             className="absolute inset-0 w-full h-full object-cover opacity-90 scale-110"
           >
-            <source src="/sandwiches-loop-08.mp4" type="video/mp4" />
+            {/* <source src="/sandwiches-loop-08.mp4" type="video/mp4" /> */}
+            <source src="/kruimeltje2.mp4" type="video/mp4" />
           </video>
 
           {/* Dark overlay for better text readability */}
