@@ -15,52 +15,47 @@ export default function Home() {
 
   return (
     <>
-      {/* HERO - Updated with your photo */}
-      <div className="relative h-screen bg-black flex items-center justify-center overflow-hidden">
-        <img 
-          src="/hero-sandwiches.jpg"   // ← we'll add this
-          alt="Fresh Ham & Cheese Baguettes" 
-          className="absolute inset-0 w-full h-full object-cover opacity-80"
-        />
-        <div className="relative z-10 text-center px-6 max-w-4xl">
-          <h1 className="text-6xl md:text-8xl font-bold text-white tracking-tighter mb-6 leading-none drop-shadow-xl">
-            't Kruimeltje
-          </h1>
-          <p className="text-2xl md:text-3xl text-amber-100 mb-10 drop-shadow-md">
-            Ham & Kaas • Verse Groentjes • Zelfgemaakte Soep
-          </p>
-          <a href="#menu" className="inline-block bg-amber-600 hover:bg-amber-700 text-white text-xl px-12 py-5 rounded-full transition text-lg">
-            Verken het Menu →
-          </a>
-        </div>
-      </div>
+      {/* HERO - MOVING SANDWICH VIDEO BACKGROUND */}
+        <div className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
+          
+          {/* Background Video */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover opacity-90 scale-110"
+          >
+            <source src="/sandwiches-loop-08.mp4" type="video/mp4" />
+          </video>
 
-      {/* MENU SECTION */}
-      <section id="menu" className="py-20 bg-[#F9F5F0]">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-5xl font-bold text-center mb-4">Onze Huisgemaakte Baguettes</h2>
-          <p className="text-center text-xl text-gray-600 mb-12">Gemaakt met liefde, en de beste ingrediënten</p>
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/40"></div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {menu.map((sandwich, i) => (
-              <div 
-                key={i}
-                
-                className="sandwich-card bg-white rounded-3xl overflow-hidden cursor-pointer shadow-xl"
-              >
-                <img src={sandwich.img} alt={sandwich.name} className="w-full h-56 object-cover" />
-                <div className="p-6">
-                  <div className="flex justify-between items-start">
-                    <h3 className="text-2xl font-semibold">{sandwich.name}</h3>
-                    <span className="text-2xl font-bold text-amber-600">€{sandwich.price}</span>
-                  </div>
-                  <p className="text-gray-600 mt-2">{sandwich.desc}</p>
-                </div>
-              </div>
-            ))}
+          {/* Content */}
+          <div className="relative z-10 text-center px-6 max-w-5xl">
+            <h1 className="text-6xl md:text-8xl font-bold text-white tracking-tighter mb-6 leading-none drop-shadow-2xl">
+              't Kruimeltje
+            </h1>
+            <p className="text-2xl md:text-3xl text-amber-100 mb-10 drop-shadow-xl">
+              Ham & Kaas • Verse Groentjes • Zelfgemaakte Soep
+            </p>
+            <a 
+              href="#menu" 
+              className="inline-block bg-amber-600 hover:bg-amber-700 text-white text-xl px-12 py-5 rounded-full transition text-lg font-medium"
+            >
+              Verken het Menu →
+            </a>
+          </div>
+
+          {/* Subtle scroll indicator */}
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/70 text-sm flex flex-col items-center">
+            <span>Scroll to discover</span>
+            <div className="w-5 h-8 border-2 border-white/50 rounded-full mt-2 flex items-center justify-center">
+              <div className="w-1 h-2 bg-white rounded-full animate-bounce"></div>
+            </div>
           </div>
         </div>
-      </section>
 
       {/* BUILD YOUR OWN */}
       <section className="py-20 bg-white">
