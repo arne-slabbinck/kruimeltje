@@ -61,7 +61,7 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-5xl font-bold mb-6">Hoogstraat 18 , Gistel (8470)</h2>
-          <p className="text-2xl mb-12 text-gray-600">059 27 45 65</p>
+          <p className="text-2xl mb-12 text-gray-600">059/27.45.65</p>
           <a 
             href="/build" 
             className="inline-block bg-black text-white text-2xl px-12 py-6 rounded-2xl hover:bg-gray-800 transition"
