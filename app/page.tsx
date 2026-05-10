@@ -17,7 +17,7 @@ export default function Home() {
     <>
 
 {/* NAVBAR */}
-      <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
+      {/* <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
           <div className="flex items-center gap-3">
             <span className="text-3xl">🥖</span>
@@ -29,6 +29,46 @@ export default function Home() {
             <button 
               onClick={() => { window.location.hash = 'location'; }}
               className="hover:text-amber-600 transition"
+            >
+              Contact / Locatie
+            </button>
+          </div>
+
+          <a 
+            href="#menu"
+            className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2.5 rounded-full text-sm font-medium transition"
+          >
+            Bestel Nu
+          </a>
+        </div>
+      </nav> */}
+
+      {/* TRANSPARENT NAVBAR */}
+      <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div className="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center 
+                        bg-black/40 backdrop-blur-lg border-b border-white/10">
+          
+          <div className="flex items-center gap-3">
+            <span className="text-3xl drop-shadow-md">🥖</span>
+            <h1 className="font-bold text-2xl tracking-tight text-white drop-shadow-md">
+              't Kruimeltje
+            </h1>
+          </div>
+
+          
+
+          <div className="flex gap-8 text-lg text-white">
+              <button 
+              // onClick={() => scrollToSection('location')}
+              onClick={() => { window.location.hash = 'menu'; }}
+              className="hover:text-amber-400 transition"
+            >
+              Menu
+            </button>
+            <button 
+              // onClick={() => scrollToSection('location')}
+              onClick={() => { window.location.hash = 'location'; }}
+              className="hover:text-amber-400 transition"
             >
               Contact / Locatie
             </button>
@@ -100,6 +140,144 @@ export default function Home() {
         </div>
       </section> */}
 
+      {/* MENU SECTION - Based on your real menu */}
+<section id="menu" className="py-24 bg-[#F9F5F0]">
+  <div className="max-w-6xl mx-auto px-6">
+    <div className="text-center mb-16">
+      <h2 className="text-5xl font-bold mb-4">Onze Broodjes</h2>
+      <p className="text-xl text-gray-600">
+        Alle broodjes zijn versgemaakt • Prijzen in €
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
+      
+      {/* LEFT COLUMN */}
+      <div className="space-y-8">
+        <div>
+          <h3 className="text-amber-600 font-semibold text-lg mb-4">CLASSICS &amp; FAVORITES</h3>
+          <div className="space-y-4 text-lg">
+            <div className="flex justify-between">
+              <span>Broodje Kip Honing Mosterd</span>
+              <span className="font-semibold">€4,90</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Broodje Zalm &amp; Kruidenkaas</span>
+              <span className="font-semibold">€5,90</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Broodje Haring sla</span>
+              <span className="font-semibold">€5,20</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Broodje Garnaal</span>
+              <span className="font-semibold">€5,90</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Broodje Hesp</span>
+              <span className="font-semibold">€4,30</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Broodje Haas</span>
+              <span className="font-semibold">€4,30</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Broodje Haas - Hesp</span>
+              <span className="font-semibold">€4,80</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 className="text-amber-600 font-semibold text-lg mb-4">SPECIALTIES</h3>
+          <div className="space-y-4 text-lg">
+            <div className="flex justify-between">
+              <span>Broodje Tonijn Pika</span>
+              <span className="font-semibold">€5,20</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Broodje Scampi Look</span>
+              <span className="font-semibold">€5,80</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Broodje Brique Honing Sla</span>
+              <span className="font-semibold">€5,70</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Broodje Martino Special</span>
+              <span className="font-semibold">€5,30</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Italiaanse Martino</span>
+              <span className="font-semibold">€5,90</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* RIGHT COLUMN */}
+      <div className="space-y-8">
+        <div>
+          <h3 className="text-amber-600 font-semibold text-lg mb-4">HOT &amp; TASTY</h3>
+          <div className="space-y-4 text-lg">
+            <div className="flex justify-between">
+              <span>Broodje Kroketje</span>
+              <span className="font-semibold">€5,00</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Broodje Vegi Curryworst</span>
+              <span className="font-semibold">€4,50</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Broodje Noorse Zalm</span>
+              <span className="font-semibold">€5,70</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Broodje Kaaskroket (2st)</span>
+              <span className="font-semibold">€6,10</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Broodje Curryworst Special</span>
+              <span className="font-semibold">€4,70</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Broodje Long Chicken</span>
+              <span className="font-semibold">€4,90</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 className="text-amber-600 font-semibold text-lg mb-4">MORE DELICIOUS OPTIONS</h3>
+          <div className="space-y-4 text-lg">
+            <div className="flex justify-between">
+              <span>Broodje Calamares</span>
+              <span className="font-semibold">€6,40</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Broodje Carpaccio</span>
+              <span className="font-semibold">€6,90</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Broodje Bicky Martino</span>
+              <span className="font-semibold">€5,90</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Broodje Lekkerbekje</span>
+              <span className="font-semibold">€5,60</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p className="text-center text-sm text-gray-500 mt-16">
+      + €0,30 for "Procorn Grof" • + €0,15 for Baguette<br />
+      All prices include standard toppings. Ask us for daily specials!
+    </p>
+  </div>
+</section>
+
       {/* LOCATION SECTION */}
       <section className="py-20 bg-white" id="location">
         <div className="max-w-6xl mx-auto px-6">
@@ -143,21 +321,57 @@ export default function Home() {
       </section>
 
       {/* ABOUT */}
-      <section className="py-20 bg-[#F9F5F0]">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-8">Openingsuren:</h2>
-          <p className="text-xl leading-relaxed text-gray-700">
-            
-            <p>maandag	07:30–14:30</p>
-            <p>dinsdag	07:30–14:30</p>
-            <p>woensdag	07:30–14:30</p>
-            <p>donderdag 07:30–14:30</p>
-            <p>vrijdag	07:30–14:30</p>
-            <p>zaterdag	09:30–13:30</p>
-            <p>zondag	Gesloten</p>
-          </p>
+{/* OPENING HOURS SECTION */}
+<section className="py-20 bg-[#F9F5F0]">
+  <div className="max-w-2xl mx-auto px-6">
+    <h2 className="text-5xl font-bold text-center mb-12">Openingsuren</h2>
+    
+    <div className="bg-white rounded-3xl shadow-xl p-10">
+      <div className="space-y-4 text-lg">
+        
+        <div className="flex justify-between items-center border-b border-gray-100 pb-4">
+          <span className="font-medium">Maandag</span>
+          <span className="font-semibold text-right">07:30 – 14:30</span>
         </div>
-      </section>
+
+        <div className="flex justify-between items-center border-b border-gray-100 pb-4">
+          <span className="font-medium">Dinsdag</span>
+          <span className="font-semibold text-right">07:30 – 14:30</span>
+        </div>
+
+        <div className="flex justify-between items-center border-b border-gray-100 pb-4">
+          <span className="font-medium">Woensdag</span>
+          <span className="font-semibold text-right">07:30 – 14:30</span>
+        </div>
+
+        <div className="flex justify-between items-center border-b border-gray-100 pb-4">
+          <span className="font-medium">Donderdag</span>
+          <span className="font-semibold text-right">07:30 – 14:30</span>
+        </div>
+
+        <div className="flex justify-between items-center border-b border-gray-100 pb-4">
+          <span className="font-medium">Vrijdag</span>
+          <span className="font-semibold text-right">07:30 – 14:30</span>
+        </div>
+
+        <div className="flex justify-between items-center border-b border-gray-100 pb-4">
+          <span className="font-medium">Zaterdag</span>
+          <span className="font-semibold text-right">09:30 – 13:30</span>
+        </div>
+
+        <div className="flex justify-between items-center pt-2">
+          <span className="font-medium text-red-600">Zondag</span>
+          <span className="font-semibold text-red-600">Gesloten</span>
+        </div>
+
+      </div>
+    </div>
+
+    <p className="text-center text-gray-500 mt-8 text-sm">
+      Hoogstraat 18, 8470 Gistel
+    </p>
+  </div>
+</section>
 
       {/* FOOTER */}
       <footer className="bg-black text-white py-12">
