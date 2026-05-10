@@ -1,65 +1,101 @@
-import Image from "next/image";
+'use client';
+
+import { useState } from 'react';
 
 export default function Home() {
+  const [selectedSandwich, setSelectedSandwich] = useState(null);
+
+  const menu = [
+    { name: "Classic Jambon", price: 7.5, desc: "Ham, butter, cornichons, fresh baguette", img: "https://picsum.photos/id/1080/600/400" },
+    { name: "Spicy Salami", price: 8.5, desc: "Spicy salami, provolone, roasted peppers, arugula", img: "https://picsum.photos/id/292/600/400" },
+    { name: "Chicken Pesto", price: 9, desc: "Grilled chicken, basil pesto, mozzarella, tomato", img: "https://picsum.photos/id/431/600/400" },
+    { name: "Roast Beef Supreme", price: 9.5, desc: "Rare roast beef, horseradish cream, caramelized onions", img: "https://picsum.photos/id/1060/600/400" },
+    { name: "Veggie Deluxe", price: 7.8, desc: "Falafel, hummus, cucumber, pickled red onion", img: "https://picsum.photos/id/292/600/400" },
+  ];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <>
+      {/* HERO - Updated with your photo */}
+      <div className="relative h-screen bg-black flex items-center justify-center overflow-hidden">
+        <img 
+          src="/hero-sandwiches.jpg"   // ← we'll add this
+          alt="Fresh Ham & Cheese Baguettes" 
+          className="absolute inset-0 w-full h-full object-cover opacity-80"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+        <div className="relative z-10 text-center px-6 max-w-4xl">
+          <h1 className="text-6xl md:text-8xl font-bold text-white tracking-tighter mb-6 leading-none drop-shadow-xl">
+            't Kruimeltje
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-2xl md:text-3xl text-amber-100 mb-10 drop-shadow-md">
+            Ham & Cheese • Loaded Veggies • Homemade Soups
+          </p>
+          <a href="#menu" className="inline-block bg-amber-600 hover:bg-amber-700 text-white text-xl px-12 py-5 rounded-full transition text-lg">
+            Explore the Menu →
+          </a>
+        </div>
+      </div>
+
+      {/* MENU SECTION */}
+      <section id="menu" className="py-20 bg-[#F9F5F0]">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-5xl font-bold text-center mb-4">Our Signature Baguettes</h2>
+          <p className="text-center text-xl text-gray-600 mb-12">Made with love, butter, and the best ingredients</p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {menu.map((sandwich, i) => (
+              <div 
+                key={i}
+                onClick={() => setSelectedSandwich(sandwich)}
+                className="sandwich-card bg-white rounded-3xl overflow-hidden cursor-pointer shadow-xl"
+              >
+                <img src={sandwich.img} alt={sandwich.name} className="w-full h-56 object-cover" />
+                <div className="p-6">
+                  <div className="flex justify-between items-start">
+                    <h3 className="text-2xl font-semibold">{sandwich.name}</h3>
+                    <span className="text-2xl font-bold text-amber-600">€{sandwich.price}</span>
+                  </div>
+                  <p className="text-gray-600 mt-2">{sandwich.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* BUILD YOUR OWN */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-5xl font-bold mb-6">Build Your Dream Baguette</h2>
+          <p className="text-2xl mb-12 text-gray-600">Choose your vibe. We make it fresh.</p>
+          <a 
+            href="/build" 
+            className="inline-block bg-black text-white text-2xl px-12 py-6 rounded-2xl hover:bg-gray-800 transition"
+          >
+            Start Building →
+          </a>
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section className="py-20 bg-[#F9F5F0]">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-4xl font-bold mb-8">From Paris with Love</h2>
+          <p className="text-xl leading-relaxed text-gray-700">
+            We started as two brothers selling baguettes from a tiny cart in 2019. 
+            Today we still bake fresh every morning and stuff them with the good stuff. 
+            No frozen bread. No compromises.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="bg-black text-white py-12">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <p className="text-3xl font-bold mb-2">BAGUETTE BROTHERS</p>
+          <p className="text-gray-400">Open Tuesday–Sunday • 11:00 – 19:00</p>
+          <p className="mt-8 text-sm text-gray-500">Hand-coded with vibes • 2026</p>
         </div>
-      </main>
-    </div>
+      </footer>
+    </>
   );
 }
