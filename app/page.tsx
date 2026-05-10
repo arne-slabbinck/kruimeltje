@@ -15,8 +15,36 @@ export default function Home() {
 
   return (
     <>
+
+{/* NAVBAR */}
+      <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+          <div className="flex items-center gap-3">
+            <span className="text-3xl">🥖</span>
+            <h1 className="font-bold text-2xl tracking-tight">'t Kruimeltje</h1>
+          </div>
+
+          <div className="flex gap-8 text-lg">
+            <a href="#home" className="hover:text-amber-600 transition">Home</a>
+            <button 
+              onClick={() => { window.location.hash = 'location'; }}
+              className="hover:text-amber-600 transition"
+            >
+              Contact / Locatie
+            </button>
+          </div>
+
+          <a 
+            href="#menu"
+            className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2.5 rounded-full text-sm font-medium transition"
+          >
+            Bestel Nu
+          </a>
+        </div>
+      </nav>
+
       {/* HERO - MOVING SANDWICH VIDEO BACKGROUND */}
-        <div className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
+        <div className="relative h-screen flex items-center justify-center overflow-hidden bg-black" id="home">
           
           {/* Background Video */}
           <video
@@ -51,7 +79,7 @@ export default function Home() {
 
           {/* Subtle scroll indicator */}
           <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/70 text-sm flex flex-col items-center">
-            <span>Scroll to discover</span>
+            <span>Scroll om te ontdekken</span>
             <div className="w-5 h-8 border-2 border-white/50 roundegd-full mt-2 flex items-center justify-center">
               <div className="w-1 h-2 bg-white rounded-full animate-bounce"></div>
             </div>
@@ -73,7 +101,7 @@ export default function Home() {
       </section> */}
 
       {/* LOCATION SECTION */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white" id="location">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             
