@@ -45,7 +45,7 @@ export default function Home() {
             {menu.map((sandwich, i) => (
               <div 
                 key={i}
-                onClick={() => setSelectedSandwich(sandwich)}
+                
                 className="sandwich-card bg-white rounded-3xl overflow-hidden cursor-pointer shadow-xl"
               >
                 <img src={sandwich.img} alt={sandwich.name} className="w-full h-56 object-cover" />
