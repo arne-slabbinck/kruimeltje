@@ -86,6 +86,7 @@ export default function Home() {
       {/* FULL-WIDTH TRANSPARENT NAVBAR */}
 
       {/* FULL-WIDTH TRANSPARENT NAVBAR with Real Logo */}
+{/* FULL-WIDTH TRANSPARENT NAVBAR with Real Logo */}
 <nav className="fixed top-0 left-0 right-0 z-50">
   <div className="w-full bg-black/40 backdrop-blur-lg border-b border-white/10">
     <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
@@ -95,29 +96,33 @@ export default function Home() {
         <img 
           src="/logo2.png" 
           alt="'t Kruimeltje" 
-          className="h-32 w-auto drop-shadow-md transition-transform group-hover:scale-105"
+          className="h-33 w-auto drop-shadow-md transition-transform group-hover:scale-105"
         />
-            <h1 className="font-bold text-3xl tracking-tight text-white drop-shadow-md">
-              
-            </h1>
       </a>
 
-      {/* Menu Links */}
-      <div className="flex gap-40 text-lg text-white bold">
-        <a href="#menu" className="hover:text-amber-400 transition">Broodjes</a>
+      {/* Menu Links - BOLDER & MORE VISIBLE */}
+      <div className="flex items-center gap-12 text-xl font-semibold text-white">
+        <a href="#menu" className="hover:text-amber-400 transition tracking-tight">
+          Broodjes
+        </a>
         <button 
           onClick={() => { window.location.hash = 'location'; }}
-          className="hover:text-amber-400 transition"
+          className="hover:text-amber-400 transition tracking-tight"
         >
           Locatie
         </button>
-        <a href="#opening-hours" className="hover:text-amber-400 transition">Openingsuren</a>
+        <a href="#opening-hours" className="hover:text-amber-400 transition tracking-tight">
+          Openingsuren
+        </a>
+        <a href="#opening-hours" className="hover:text-amber-400 transition tracking-tight">
+          Contact
+        </a>
       </div>
 
       {/* Order Button */}
       <a 
         href="#menu"
-        className="bg-amber-600 hover:bg-amber-700 text-white px-7 py-3 rounded-full text-sm font-medium transition"
+        className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-full text-base font-semibold transition"
       >
         Bestel nu
       </a>
