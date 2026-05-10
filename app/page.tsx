@@ -51,7 +51,7 @@ export default function Home() {
           {/* Subtle scroll indicator */}
           <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/70 text-sm flex flex-col items-center">
             <span>Scroll to discover</span>
-            <div className="w-5 h-8 border-2 border-white/50 rounded-full mt-2 flex items-center justify-center">
+            <div className="w-5 h-8 border-2 border-white/50 roundegd-full mt-2 flex items-center justify-center">
               <div className="w-1 h-2 bg-white rounded-full animate-bounce"></div>
             </div>
           </div>
@@ -68,6 +68,48 @@ export default function Home() {
           >
             Reserveer nu
           </a>
+        </div>
+      </section>
+
+      {/* LOCATION SECTION */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            
+            {/* Left: Info */}
+            <div>
+              <h2 className="text-5xl font-bold mb-8">Kom gerust langs!</h2>
+              
+              <div className="space-y-8">
+                <div>
+                  <p className="text-amber-600 font-medium text-lg">📍 Address</p>
+                  <p className="text-2xl font-semibold mt-2">Hoogstraat 18</p>
+                  <p className="text-2xl font-semibold">8470 Gistel, Belgium</p>
+                </div>
+
+                <div>
+                  <p className="text-amber-600 font-medium text-lg">🕒 Opening Hours</p>
+                  <p className="text-xl mt-2">Maandag – Zaterdag: 07:30 – 14:30</p>
+                  <p className="text-xl">Zondag Gesloten</p>
+                </div>
+
+                <div>
+                  <a 
+                    href="https://www.google.com/maps/dir/?api=1&destination=Hoogstraat+18%2C+Gistel+8470+Belgium" 
+                    target="_blank"
+                    className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-2xl hover:bg-gray-800 transition text-lg"
+                  >
+                    Get Directions →
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Google Maps Embed */}
+            <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2502.393503696797!2d2.9629143775339166!3d51.15653443627349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dcade3ed773459%3A0xf8459199d0330a61!2sHoogstraat%2018%2C%208470%20Gistel!5e0!3m2!1sen!2sbe!4v1778433455035!5m2!1sen!2sbe" width="600" height="450" style={{border:0}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
         </div>
       </section>
 
