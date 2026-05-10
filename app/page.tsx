@@ -44,7 +44,7 @@ export default function Home() {
       </nav> */}
 
       {/* TRANSPARENT NAVBAR */}
-      <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+      {/* <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <div className="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center 
                         bg-black/40 backdrop-blur-lg border-b border-white/10">
           
@@ -81,7 +81,45 @@ export default function Home() {
             Bestel Nu
           </a>
         </div>
-      </nav>
+      </nav> */}
+
+      {/* FULL-WIDTH TRANSPARENT NAVBAR */}
+<nav className="fixed top-0 left-0 right-0 z-50">
+  <div className="w-full bg-black/40 backdrop-blur-lg border-b border-white/10">
+    <div className="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+      
+      {/* Logo */}
+      <div className="flex items-center gap-3">
+        <a href="#home" className="flex items-center gap-3">
+        <span className="text-3xl drop-shadow-md">🥖</span>
+        <h1 className="font-bold text-2xl tracking-tight text-white drop-shadow-md">
+          't Kruimeltje
+        </h1>
+        </a>
+      </div>
+
+      {/* Menu Links */}
+      <div className="flex gap-8 text-lg text-white">
+        <a href="#menu" className="hover:text-amber-400 transition">Menu</a>
+        <button 
+          onClick={() => { window.location.hash = 'location'; }}
+          className="hover:text-amber-400 transition"
+        >
+          Locatie / contact
+        </button>
+      </div>
+
+      {/* Order Button */}
+      <a 
+        href="#menu"
+        className="bg-amber-600 hover:bg-amber-700 text-white px-7 py-3 rounded-full text-sm font-medium transition"
+      >
+        Bestel Nu
+      </a>
+
+    </div>
+  </div>
+</nav>
 
       {/* HERO - MOVING SANDWICH VIDEO BACKGROUND */}
         <div className="relative h-screen flex items-center justify-center overflow-hidden bg-black" id="home">
@@ -146,7 +184,7 @@ export default function Home() {
     <div className="text-center mb-16">
       <h2 className="text-5xl font-bold mb-4">Onze Broodjes</h2>
       <p className="text-xl text-gray-600">
-        Alle broodjes zijn versgemaakt • Prijzen in €
+        Alle broodjes zijn vers gemaakt • Prijzen in €
       </p>
     </div>
 
@@ -272,8 +310,8 @@ export default function Home() {
     </div>
 
     <p className="text-center text-sm text-gray-500 mt-16">
-      + €0,30 for "Procorn Grof" • + €0,15 for Baguette<br />
-      All prices include standard toppings. Ask us for daily specials!
+      Spaar bij elke 12 broodjes een gratis broodje bij elkaar!<br />
+      Vraag ons naar onze dagelijkse soep!<br />
     </p>
   </div>
 </section>
