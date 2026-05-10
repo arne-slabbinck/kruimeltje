@@ -84,29 +84,34 @@ export default function Home() {
       </nav> */}
 
       {/* FULL-WIDTH TRANSPARENT NAVBAR */}
+
+      {/* FULL-WIDTH TRANSPARENT NAVBAR with Real Logo */}
 <nav className="fixed top-0 left-0 right-0 z-50">
   <div className="w-full bg-black/40 backdrop-blur-lg border-b border-white/10">
-    <div className="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+    <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
       
       {/* Logo */}
-      <div className="flex items-center gap-3">
-        <a href="#home" className="flex items-center gap-3">
-        <span className="text-3xl drop-shadow-md">🥖</span>
-        <h1 className="font-bold text-2xl tracking-tight text-white drop-shadow-md">
-          't Kruimeltje
-        </h1>
-        </a>
-      </div>
+      <a href="#" className="flex items-center gap-3 group">
+        <img 
+          src="/logo2.png" 
+          alt="'t Kruimeltje" 
+          className="h-32 w-auto drop-shadow-md transition-transform group-hover:scale-105"
+        />
+            <h1 className="font-bold text-3xl tracking-tight text-white drop-shadow-md">
+              
+            </h1>
+      </a>
 
       {/* Menu Links */}
-      <div className="flex gap-8 text-lg text-white">
-        <a href="#menu" className="hover:text-amber-400 transition">Menu</a>
+      <div className="flex gap-40 text-lg text-white bold">
+        <a href="#menu" className="hover:text-amber-400 transition">Broodjes</a>
         <button 
           onClick={() => { window.location.hash = 'location'; }}
           className="hover:text-amber-400 transition"
         >
-          Locatie / contact
+          Locatie
         </button>
+        <a href="#opening-hours" className="hover:text-amber-400 transition">Openingsuren</a>
       </div>
 
       {/* Order Button */}
@@ -114,12 +119,13 @@ export default function Home() {
         href="#menu"
         className="bg-amber-600 hover:bg-amber-700 text-white px-7 py-3 rounded-full text-sm font-medium transition"
       >
-        Bestel Nu
+        Bestel nu
       </a>
 
     </div>
   </div>
 </nav>
+
 
       {/* HERO - MOVING SANDWICH VIDEO BACKGROUND */}
         <div className="relative h-screen flex items-center justify-center overflow-hidden bg-black" id="home">
@@ -310,7 +316,7 @@ export default function Home() {
     </div>
 
     <p className="text-center text-sm text-gray-500 mt-16">
-      Spaar bij elke 12 broodjes een gratis broodje bij elkaar!<br />
+      Spaar bij elke 10 broodjes een gratis broodje bij elkaar!<br />
       Vraag ons naar onze dagelijkse soep!<br />
     </p>
   </div>
@@ -360,7 +366,7 @@ export default function Home() {
 
       {/* ABOUT */}
 {/* OPENING HOURS SECTION */}
-<section className="py-20 bg-[#F9F5F0]">
+<section className="py-20 bg-[#F9F5F0]" id="opening-hours">
   <div className="max-w-2xl mx-auto px-6">
     <h2 className="text-5xl font-bold text-center mb-12">Openingsuren</h2>
     
