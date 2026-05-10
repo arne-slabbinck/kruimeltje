@@ -101,7 +101,7 @@ export default function Home() {
       </a>
 
       {/* Menu Links - BOLDER & MORE VISIBLE */}
-      <div className="flex items-center gap-12 text-xl font-semibold text-white">
+      <div className="flex items-center gap-20 text-xl font-semibold text-white">
         <a href="#menu" className="hover:text-amber-400 transition tracking-tight">
           Broodjes
         </a>
