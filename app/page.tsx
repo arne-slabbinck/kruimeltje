@@ -27,10 +27,10 @@ export default function Home() {
             't Kruimeltje
           </h1>
           <p className="text-2xl md:text-3xl text-amber-100 mb-10 drop-shadow-md">
-            Ham & Cheese • Loaded Veggies • Homemade Soups
+            Ham & Kaas • Verse Groentjes • Zelfgemaakte Soep
           </p>
           <a href="#menu" className="inline-block bg-amber-600 hover:bg-amber-700 text-white text-xl px-12 py-5 rounded-full transition text-lg">
-            Explore the Menu →
+            Verken het Menu →
           </a>
         </div>
       </div>
@@ -38,8 +38,8 @@ export default function Home() {
       {/* MENU SECTION */}
       <section id="menu" className="py-20 bg-[#F9F5F0]">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-5xl font-bold text-center mb-4">Our Signature Baguettes</h2>
-          <p className="text-center text-xl text-gray-600 mb-12">Made with love, butter, and the best ingredients</p>
+          <h2 className="text-5xl font-bold text-center mb-4">Onze Huisgemaakte Baguettes</h2>
+          <p className="text-center text-xl text-gray-600 mb-12">Gemaakt met liefde, en de beste ingrediënten</p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {menu.map((sandwich, i) => (
@@ -65,13 +65,13 @@ export default function Home() {
       {/* BUILD YOUR OWN */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-5xl font-bold mb-6">Build Your Dream Baguette</h2>
-          <p className="text-2xl mb-12 text-gray-600">Choose your vibe. We make it fresh.</p>
+          <h2 className="text-5xl font-bold mb-6">Hoogstraat 18 , Gistel (8470)</h2>
+          <p className="text-2xl mb-12 text-gray-600">059 27 45 65</p>
           <a 
             href="/build" 
             className="inline-block bg-black text-white text-2xl px-12 py-6 rounded-2xl hover:bg-gray-800 transition"
           >
-            Start Building →
+            Reserveer nu
           </a>
         </div>
       </section>
@@ -79,11 +79,16 @@ export default function Home() {
       {/* ABOUT */}
       <section className="py-20 bg-[#F9F5F0]">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-8">From Paris with Love</h2>
+          <h2 className="text-4xl font-bold mb-8">Openingstijden:</h2>
           <p className="text-xl leading-relaxed text-gray-700">
-            We started as two brothers selling baguettes from a tiny cart in 2019. 
-            Today we still bake fresh every morning and stuff them with the good stuff. 
-            No frozen bread. No compromises.
+            
+            <p>maandag	07:30–14:30</p>
+            <p>dinsdag	07:30–14:30</p>
+            <p>woensdag	07:30–14:30</p>
+            <p>donderdag 07:30–14:30</p>
+            <p>vrijdag	07:30–14:30</p>
+            <p>zaterdag	09:30–13:30</p>
+            <p>zondag	Gesloten</p>
           </p>
         </div>
       </section>
@@ -91,9 +96,9 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="bg-black text-white py-12">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <p className="text-3xl font-bold mb-2">BAGUETTE BROTHERS</p>
-          <p className="text-gray-400">Open Tuesday–Sunday • 11:00 – 19:00</p>
-          <p className="mt-8 text-sm text-gray-500">Hand-coded with vibes • 2026</p>
+          <p className="text-3xl font-bold mb-2">'t Kruimeltje</p>
+          <p className="text-gray-400">Open maandag-zaterdag • 07:30 – 14:30</p>
+          <p className="mt-8 text-sm text-gray-500">Hand-coded by Noedel</p>
         </div>
       </footer>
     </>
