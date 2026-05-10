@@ -38,7 +38,7 @@ export default function Home() {
               't Kruimeltje
             </h1>
             <p className="text-2xl md:text-3xl text-amber-100 mb-10 drop-shadow-xl">
-              Ham & Kaas • Verse Groentjes • Zelfgemaakte Soep
+              Handgemaakte Broodjes • Verse Groentjes • Zelfgemaakte Soep
             </p>
             <a 
               href="#menu" 
