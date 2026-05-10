@@ -94,27 +94,24 @@ export default function Home() {
       {/* Logo */}
       <a href="#" className="flex items-center gap-3 group">
         <img 
-          src="/logo2.png" 
+          src="/smallerlogo.png" 
           alt="'t Kruimeltje" 
-          className="h-33 w-auto drop-shadow-md transition-transform group-hover:scale-105"
+          className="h-26 w-auto drop-shadow-md transition-transform group-hover:scale-105"
         />
       </a>
 
       {/* Menu Links - BOLDER & MORE VISIBLE */}
-      <div className="flex items-center gap-20 text-xl font-semibold text-white">
+      <div className="flex items-center gap-24 text-xl font-semibold text-white">
         <a href="#menu" className="hover:text-amber-400 transition tracking-tight">
           Broodjes
         </a>
-        <button 
-          onClick={() => { window.location.hash = 'location'; }}
-          className="hover:text-amber-400 transition tracking-tight"
-        >
+        <a href="#location" className="hover:text-amber-400 transition tracking-tight">
           Locatie
-        </button>
+        </a>
         <a href="#opening-hours" className="hover:text-amber-400 transition tracking-tight">
           Openingsuren
         </a>
-        <a href="#opening-hours" className="hover:text-amber-400 transition tracking-tight">
+        <a href="#contact" className="hover:text-amber-400 transition tracking-tight">
           Contact
         </a>
       </div>
