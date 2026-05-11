@@ -18,78 +18,6 @@ export default function Home() {
   return (
     <>
 
-{/* NAVBAR */}
-      {/* <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <span className="text-3xl">🥖</span>
-            <h1 className="font-bold text-2xl tracking-tight">'t Kruimeltje</h1>
-          </div>
-
-          <div className="flex gap-8 text-lg">
-            <a href="#home" className="hover:text-amber-600 transition">Home</a>
-            <button 
-              onClick={() => { window.location.hash = 'location'; }}
-              className="hover:text-amber-600 transition"
-            >
-              Contact / Locatie
-            </button>
-          </div>
-
-          <a 
-            href="#menu"
-            className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2.5 rounded-full text-sm font-medium transition"
-          >
-            Bestel Nu
-          </a>
-        </div>
-      </nav> */}
-
-      {/* TRANSPARENT NAVBAR */}
-      {/* <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-        <div className="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center 
-                        bg-black/40 backdrop-blur-lg border-b border-white/10">
-          
-          <div className="flex items-center gap-3">
-            <span className="text-3xl drop-shadow-md">🥖</span>
-            <h1 className="font-bold text-2xl tracking-tight text-white drop-shadow-md">
-              't Kruimeltje
-            </h1>
-          </div>
-
-          
-
-          <div className="flex gap-8 text-lg text-white">
-              <button 
-              // onClick={() => scrollToSection('location')}
-              onClick={() => { window.location.hash = 'menu'; }}
-              className="hover:text-amber-400 transition"
-            >
-              Menu
-            </button>
-            <button 
-              // onClick={() => scrollToSection('location')}
-              onClick={() => { window.location.hash = 'location'; }}
-              className="hover:text-amber-400 transition"
-            >
-              Contact / Locatie
-            </button>
-          </div>
-
-          <a 
-            href="#menu"
-            className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2.5 rounded-full text-sm font-medium transition"
-          >
-            Bestel Nu
-          </a>
-        </div>
-      </nav> */}
-
-      {/* FULL-WIDTH TRANSPARENT NAVBAR */}
-
-      {/* FULL-WIDTH TRANSPARENT NAVBAR with Real Logo */}
-{/* FULL-WIDTH TRANSPARENT NAVBAR with Real Logo */}
-
 {/* MOBILE-FRIENDLY NAVBAR */}
 {/* MOBILE-FRIENDLY NAVBAR - Bigger Logo */}
 <nav className="fixed top-0 left-0 right-0 z-50">
@@ -446,6 +374,80 @@ export default function Home() {
     <p className="text-center text-gray-500 mt-8 text-sm">
       Hoogstraat 18, 8470 Gistel
     </p>
+  </div>
+</section>
+
+{/* CONTACT SECTION - New Photo */}
+{/* CONTACT SECTION - Shorter & Better Balanced */}
+<section id="contact" className="py-16 bg-white">   {/* Reduced padding */}
+  <div className="max-w-6xl mx-auto px-6">
+    <div className="text-center mb-12">   {/* Smaller margin */}
+      <h2 className="text-5xl font-bold mb-4">Contacteer Ons</h2>
+      <p className="text-xl text-gray-600">Broodje reserveren of plannen voor een evenement?</p>
+    </div>
+
+    <div className="grid md:grid-cols-2 gap-12 items-center">
+      
+      {/* Photo - Controlled Height */}
+      <div className="rounded-3xl overflow-hidden shadow-2xl aspect-[4/5] md:aspect-square">  {/* Key change */}
+        <img 
+          src="/owners4.jpg" 
+          alt="Bart & Wendy van 't Kruimeltje" 
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Contact Information */}
+      <div className="space-y-8">   {/* Reduced spacing */}
+        <div>
+          <h3 className="text-3xl font-semibold mb-8">Bart & Wendy</h3>
+          
+          <div className="space-y-7 text-lg">
+            {/* Phone */}
+            <div className="flex items-start gap-6">
+              <div className="w-12 h-12 bg-amber-100 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0 mt-1">
+                📞
+              </div>
+              <div>
+                <p className="text-amber-600 font-medium">Telefoon</p>
+                <a href="tel:059276740" className="text-3xl font-semibold hover:text-amber-600 transition">
+                  059 27 67 40
+                </a>
+              </div>
+            </div>
+
+            {/* Email */}
+            <div className="flex items-start gap-6">
+              <div className="w-12 h-12 bg-amber-100 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0 mt-1">
+                ✉️
+              </div>
+              <div>
+                <p className="text-amber-600 font-medium">E-mail</p>
+                <a href="mailto:kruimeltje@gmail.com" className="text-3xl font-semibold hover:text-amber-600 transition">
+                  kruimeltje@gmail.com
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 pt-4">
+          <a 
+            href="tel:059276740"
+            className="flex-1 bg-black text-white text-center py-5 rounded-2xl text-lg font-semibold hover:bg-gray-800 transition"
+          >
+            📞 Bel Ons Nu
+          </a>
+          <a 
+            href="mailto:kruimeltje@gmail.com"
+            className="flex-1 border-2 border-black text-center py-5 rounded-2xl text-lg font-semibold hover:bg-gray-100 transition"
+          >
+            ✉️ Stuur een E-mail
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 

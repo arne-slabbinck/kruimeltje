@@ -14,7 +14,20 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "'t Kruimeltje",
-  description: "Broodjeszaak in Gistel",
+  description: "Verse broodjes • Dagelijks vers • Hoogstraat 18, Gistel",
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.png', type: 'image/png' },
+    ],
+    apple: '/favicon.png',           // For iOS home screen
+    shortcut: '/favicon.ico',
+  },
+  openGraph: {
+    title: "'t Kruimeltje",
+    description: "Verse broodjes in Gistel",
+    images: [{ url: '/owners3.jpg' }],   // Optional: shows your shop photo when shared
+  },
 };
 
 export default function RootLayout({
