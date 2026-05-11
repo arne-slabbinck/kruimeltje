@@ -13,6 +13,8 @@ export default function Home() {
     { name: "Veggie Deluxe", price: 7.8, desc: "Falafel, hummus, cucumber, pickled red onion", img: "https://picsum.photos/id/292/600/400" },
   ];
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <>
 
@@ -87,46 +89,74 @@ export default function Home() {
 
       {/* FULL-WIDTH TRANSPARENT NAVBAR with Real Logo */}
 {/* FULL-WIDTH TRANSPARENT NAVBAR with Real Logo */}
+
+{/* MOBILE-FRIENDLY NAVBAR */}
+{/* MOBILE-FRIENDLY NAVBAR - Bigger Logo */}
 <nav className="fixed top-0 left-0 right-0 z-50">
   <div className="w-full bg-black/40 backdrop-blur-lg border-b border-white/10">
-    <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
+    <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
       
-      {/* Logo */}
+      {/* Bigger Logo */}
       <a href="#" className="flex items-center gap-3 group">
         <img 
           src="/smallerlogo.png" 
           alt="'t Kruimeltje" 
-          className="h-26 w-auto drop-shadow-md transition-transform group-hover:scale-105"
+          className="h-20 w-auto drop-shadow-md transition-transform group-hover:scale-105"
         />
       </a>
 
-      {/* Menu Links - BOLDER & MORE VISIBLE */}
-      <div className="flex items-center gap-24 text-xl font-semibold text-white">
-        <a href="#menu" className="hover:text-amber-400 transition tracking-tight">
-          Broodjes
-        </a>
-        <a href="#location" className="hover:text-amber-400 transition tracking-tight">
-          Locatie
-        </a>
-        <a href="#opening-hours" className="hover:text-amber-400 transition tracking-tight">
-          Openingsuren
-        </a>
-        <a href="#contact" className="hover:text-amber-400 transition tracking-tight">
-          Contact
-        </a>
+      {/* Desktop Menu */}
+      <div className="hidden md:flex items-center gap-10 text-xl font-semibold text-white">
+        <a href="#menu" className="hover:text-amber-400 transition tracking-tight">Broodjes</a>
+        <a href="#location" className="hover:text-amber-400 transition tracking-tight">Locatie</a>
+        <a href="#opening-hours" className="hover:text-amber-400 transition tracking-tight">Openingsuren</a>
+        <a href="#contact" className="hover:text-amber-400 transition tracking-tight">Contact</a>
       </div>
 
-      {/* Order Button */}
+      {/* Desktop Order Button */}
       <a 
         href="#menu"
-        className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-full text-base font-semibold transition"
+        className="hidden md:block bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-full text-base font-semibold transition"
       >
         Bestel nu
       </a>
 
+      {/* Mobile Hamburger */}
+      <button 
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        className="md:hidden text-white p-2"
+        aria-label="Toggle menu"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isMenuOpen ? "M6 18L18 6M6 6h12v12" : "M4 6h16M4 12h16M4 18h16"} />
+        </svg>
+      </button>
     </div>
+
+    {/* Mobile Menu */}
+    {isMenuOpen && (
+      <div className="md:hidden bg-black/95 backdrop-blur-lg border-t border-white/10">
+        <div className="flex flex-col py-8 px-6 space-y-6 text-xl font-semibold text-white">
+          <a href="#menu" className="hover:text-amber-400 transition" onClick={() => setIsMenuOpen(false)}>Broodjes</a>
+          <a href="#location" className="hover:text-amber-400 transition" onClick={() => setIsMenuOpen(false)}>Locatie</a>
+          <a href="#opening-hours" className="hover:text-amber-400 transition" onClick={() => setIsMenuOpen(false)}>Openingsuren</a>
+          <a href="#contact" className="hover:text-amber-400 transition" onClick={() => setIsMenuOpen(false)}>Contact</a>
+          
+          <a 
+            href="#menu"
+            className="mt-6 bg-amber-600 hover:bg-amber-700 text-white py-4 rounded-2xl text-center text-lg font-semibold transition"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Bestel nu
+          </a>
+        </div>
+      </div>
+    )}
   </div>
 </nav>
+
+
+
 
 
       {/* HERO - MOVING SANDWICH VIDEO BACKGROUND */}
@@ -420,7 +450,7 @@ export default function Home() {
 </section>
 
       {/* FOOTER */}
-      <footer className="bg-black text-white py-12">
+      <footer id="contact" className="bg-black text-white py-12">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <p className="text-3xl font-bold mb-2">'t Kruimeltje</p>
           <p className="text-gray-400">Open maandag-zaterdag • 07:30 – 14:30</p>
