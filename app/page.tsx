@@ -20,8 +20,9 @@ export default function Home() {
 
 {/* MOBILE-FRIENDLY NAVBAR */}
 {/* MOBILE-FRIENDLY NAVBAR - Bigger Logo */}
+
 <nav className="fixed top-0 left-0 right-0 z-50">
-  <div className="w-full bg-black/40 backdrop-blur-lg border-b border-white/10">
+  <div className="w-full max-w-full bg-black/40 backdrop-blur-lg border-b border-white/10">
     <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
       
       {/* Bigger Logo */}
@@ -393,7 +394,7 @@ export default function Home() {
         <img 
           src="/owners4.jpg" 
           alt="Bart & Wendy van 't Kruimeltje" 
-          className="w-full h-full object-cover"
+          className="w-full h-full max-w-full object-cover"
         />
       </div>
 
@@ -459,6 +460,8 @@ export default function Home() {
           <p className="mt-8 text-sm text-gray-500">Hand-coded by Noedel</p>
         </div>
       </footer>
+
     </>
+    
   );
 }
