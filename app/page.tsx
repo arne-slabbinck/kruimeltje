@@ -16,111 +16,101 @@ export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <>
+    <main className="overflow-x-hidden">   {/* ← This fixes the side scroll */}
 
-{/* MOBILE-FRIENDLY NAVBAR */}
-{/* MOBILE-FRIENDLY NAVBAR - Bigger Logo */}
+      {/* MOBILE-FRIENDLY NAVBAR */}
+      <nav className="fixed top-0 left-0 right-0 z-50">
+        <div className="w-full bg-black/40 backdrop-blur-lg border-b border-white/10">
+          <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            
+            {/* Bigger Logo */}
+            <a href="#" className="flex items-center gap-3 group">
+              <img 
+                src="/smallerlogo.png" 
+                alt="'t Kruimeltje" 
+                className="h-20 w-auto drop-shadow-md transition-transform group-hover:scale-105"
+              />
+            </a>
 
-<nav className="fixed top-0 left-0 right-0 z-50">
-  <div className="w-full max-w-full bg-black/40 backdrop-blur-lg border-b border-white/10">
-    <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      
-      {/* Bigger Logo */}
-      <a href="#" className="flex items-center gap-3 group">
-        <img 
-          src="/smallerlogo.png" 
-          alt="'t Kruimeltje" 
-          className="h-20 w-auto drop-shadow-md transition-transform group-hover:scale-105"
-        />
-      </a>
+            {/* Desktop Menu */}
+            <div className="hidden md:flex items-center gap-10 text-xl font-semibold text-white">
+              <a href="#menu" className="hover:text-amber-400 transition tracking-tight">Broodjes</a>
+              <a href="#location" className="hover:text-amber-400 transition tracking-tight">Locatie</a>
+              <a href="#opening-hours" className="hover:text-amber-400 transition tracking-tight">Openingsuren</a>
+              <a href="#contact" className="hover:text-amber-400 transition tracking-tight">Contact</a>
+            </div>
 
-      {/* Desktop Menu */}
-      <div className="hidden md:flex items-center gap-10 text-xl font-semibold text-white">
-        <a href="#menu" className="hover:text-amber-400 transition tracking-tight">Broodjes</a>
-        <a href="#location" className="hover:text-amber-400 transition tracking-tight">Locatie</a>
-        <a href="#opening-hours" className="hover:text-amber-400 transition tracking-tight">Openingsuren</a>
-        <a href="#contact" className="hover:text-amber-400 transition tracking-tight">Contact</a>
-      </div>
+            {/* Desktop Order Button */}
+            <a 
+              href="#menu"
+              className="hidden md:block bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-full text-base font-semibold transition"
+            >
+              Bestel nu
+            </a>
 
-      {/* Desktop Order Button */}
-      <a 
-        href="#menu"
-        className="hidden md:block bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-full text-base font-semibold transition"
-      >
-        Bestel nu
-      </a>
+            {/* Mobile Hamburger */}
+            <button 
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden text-white p-2"
+              aria-label="Toggle menu"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isMenuOpen ? "M6 18L18 6M6 6h12v12" : "M4 6h16M4 12h16M4 18h16"} />
+              </svg>
+            </button>
+          </div>
 
-      {/* Mobile Hamburger */}
-      <button 
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="md:hidden text-white p-2"
-        aria-label="Toggle menu"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isMenuOpen ? "M6 18L18 6M6 6h12v12" : "M4 6h16M4 12h16M4 18h16"} />
-        </svg>
-      </button>
-    </div>
+          {/* Mobile Menu */}
+          {isMenuOpen && (
+            <div className="md:hidden bg-black/95 backdrop-blur-lg border-t border-white/10">
+              <div className="flex flex-col py-8 px-6 space-y-6 text-xl font-semibold text-white">
+                <a href="#menu" className="hover:text-amber-400 transition" onClick={() => setIsMenuOpen(false)}>Broodjes</a>
+                <a href="#location" className="hover:text-amber-400 transition" onClick={() => setIsMenuOpen(false)}>Locatie</a>
+                <a href="#opening-hours" className="hover:text-amber-400 transition" onClick={() => setIsMenuOpen(false)}>Openingsuren</a>
+                <a href="#contact" className="hover:text-amber-400 transition" onClick={() => setIsMenuOpen(false)}>Contact</a>
+                
+                <a 
+                  href="#menu"
+                  className="mt-6 bg-amber-600 hover:bg-amber-700 text-white py-4 rounded-2xl text-center text-lg font-semibold transition"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Bestel nu
+                </a>
+              </div>
+            </div>
+          )}
+        </div>
+      </nav>
 
-    {/* Mobile Menu */}
-    {isMenuOpen && (
-      <div className="md:hidden bg-black/95 backdrop-blur-lg border-t border-white/10">
-        <div className="flex flex-col py-8 px-6 space-y-6 text-xl font-semibold text-white">
-          <a href="#menu" className="hover:text-amber-400 transition" onClick={() => setIsMenuOpen(false)}>Broodjes</a>
-          <a href="#location" className="hover:text-amber-400 transition" onClick={() => setIsMenuOpen(false)}>Locatie</a>
-          <a href="#opening-hours" className="hover:text-amber-400 transition" onClick={() => setIsMenuOpen(false)}>Openingsuren</a>
-          <a href="#contact" className="hover:text-amber-400 transition" onClick={() => setIsMenuOpen(false)}>Contact</a>
-          
+      {/* HERO */}
+      <div className="relative h-screen flex items-center justify-center overflow-hidden bg-black" id="home">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-90 scale-110"
+        >
+          <source src="/kruimeltje2.mp4" type="video/mp4" />
+        </video>
+
+        <div className="absolute inset-0 bg-black/40"></div>
+
+        <div className="relative z-10 text-center px-6 max-w-5xl">
+          <h1 className="text-6xl md:text-8xl font-bold text-white tracking-tighter mb-6 leading-none drop-shadow-2xl">
+            't Kruimeltje
+          </h1>
+          <p className="text-2xl md:text-3xl text-amber-100 mb-10 drop-shadow-xl">
+            Handgemaakte Broodjes • Verse Groentjes • Zelfgemaakte Soep
+          </p>
           <a 
-            href="#menu"
-            className="mt-6 bg-amber-600 hover:bg-amber-700 text-white py-4 rounded-2xl text-center text-lg font-semibold transition"
-            onClick={() => setIsMenuOpen(false)}
+            href="#menu" 
+            className="inline-block bg-amber-600 hover:bg-amber-700 text-white text-xl px-12 py-5 rounded-full transition text-lg font-medium"
           >
-            Bestel nu
+            Verken het Menu →
           </a>
         </div>
       </div>
-    )}
-  </div>
-</nav>
-
-
-
-
-
-      {/* HERO - MOVING SANDWICH VIDEO BACKGROUND */}
-        <div className="relative h-screen flex items-center justify-center overflow-hidden bg-black" id="home">
-          
-          {/* Background Video */}
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-90 scale-110"
-          >
-            {/* <source src="/sandwiches-loop-08.mp4" type="video/mp4" /> */}
-            <source src="/kruimeltje2.mp4" type="video/mp4" />
-          </video>
-
-          {/* Dark overlay for better text readability */}
-          <div className="absolute inset-0 bg-black/40"></div>
-
-          {/* Content */}
-          <div className="relative z-10 text-center px-6 max-w-5xl">
-            <h1 className="text-6xl md:text-8xl font-bold text-white tracking-tighter mb-6 leading-none drop-shadow-2xl">
-              't Kruimeltje
-            </h1>
-            <p className="text-2xl md:text-3xl text-amber-100 mb-10 drop-shadow-xl">
-              Handgemaakte Broodjes • Verse Groentjes • Zelfgemaakte Soep
-            </p>
-            <a 
-              href="#menu" 
-              className="inline-block bg-amber-600 hover:bg-amber-700 text-white text-xl px-12 py-5 rounded-full transition text-lg font-medium"
-            >
-              Verken het Menu →
-            </a>
-          </div>
 
           {/* Subtle scroll indicator */}
           <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/70 text-sm flex flex-col items-center">
@@ -129,21 +119,9 @@ export default function Home() {
               <div className="w-1 h-2 bg-white rounded-full animate-bounce"></div>
             </div>
           </div>
-        </div>
 
-      {/* BUILD YOUR OWN */}
-      {/* <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-5xl font-bold mb-6">Hoogstraat 18 , Gistel (8470)</h2>
-          <p className="text-2xl mb-12 text-gray-600">059/27.45.65</p>
-          <a 
-            href="/build" 
-            className="inline-block bg-black text-white text-2xl px-12 py-6 rounded-2xl hover:bg-gray-800 transition"
-          >
-            Reserveer nu
-          </a>
-        </div>
-      </section> */}
+
+
 
       {/* MENU SECTION - Based on your real menu */}
 <section id="menu" className="py-24 bg-[#F9F5F0]">
@@ -457,11 +435,11 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 text-center">
           <p className="text-3xl font-bold mb-2">'t Kruimeltje</p>
           <p className="text-gray-400">Open maandag-zaterdag • 07:30 – 14:30</p>
-          <p className="mt-8 text-sm text-gray-500">Hand-coded by Noedel</p>
+          <p className="mt-8 text-sm text-gray-500">Hand-coded by Arne Slabbinck</p>
         </div>
       </footer>
 
-    </>
+    </main>
     
   );
 }
